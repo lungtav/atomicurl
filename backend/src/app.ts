@@ -8,6 +8,8 @@ const createApp = function () {
 
   app.use(cors(corsOptions));
   app.use(helmet());
+  app.use(express.json());
+  app.use(express.urlencoded({ extended: true }));
 
   return app;
 };
