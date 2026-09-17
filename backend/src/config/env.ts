@@ -17,4 +17,5 @@ function validateUrl(key: string) {
 export const env = {
   PORT,
   APP_URL: validateUrl("APP_URL"),
+  DATABASE_URL: validateUrl("DATABASE_URL"),
 };
