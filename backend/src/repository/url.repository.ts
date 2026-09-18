@@ -12,3 +12,15 @@ export const createUrl = async (url: string, shortCode: string) => {
 
   return result.rows[0];
 };
+
+export const getOriginalUrl = async (shortCode: string) => {
+  const result = await db.query(
+    `
+        SELECT original_url FROM urls
+        WHERE short_code = $1
+        `,
+    [shortCode],
+  );
+
+  return result.rows[0];
+};
