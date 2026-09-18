@@ -2,8 +2,7 @@ import express from "express";
 import cors from "cors";
 import helmet from "helmet";
 import { corsOptions } from "./lib/corsOption.js";
-import { uptime } from "process";
-import { timeStamp } from "console";
+import { appRouter } from "./routes/indexRoutes.js";
 
 const createApp = function () {
   const app = express();
@@ -12,14 +11,15 @@ const createApp = function () {
   app.use(helmet());
   app.use(express.json());
   app.use(express.urlencoded({ extended: true }));
+  app.use("/api", appRouter);
 
-  app.get("/api/health", (req, res)=>{
+  app.get("/health", (req, res) => {
     res.status(200).json({
       status: "UP",
       timeStamp: new Date(),
-      uptime: process.uptime()
-    })
-  })
+      uptime: process.uptime(),
+    });
+  });
 
   return app;
 };
