@@ -4,6 +4,7 @@ import { createUrlSchema } from "../validations/url.validation.js";
 import * as UrlService from "../services/url.services.js";
 import type { createUrlInput } from "../types/url.types.js";
 import { ValidationError } from "../errors/ValidationError.js";
+import { env } from "../config/env.js";
 
 export const createShortUrl = asyncHandler(
   async (req: Request<{}, createUrlInput>, res: Response) => {
@@ -15,8 +16,10 @@ export const createShortUrl = asyncHandler(
     }
 
     const urlRow = await UrlService.createShortUrl(parsed.data);
+    const shortUrl = `${env.APP_URL}/${urlRow.short_code}`;
     res.status(200).json({
-      urlRow,
+      ...urlRow,
+      shortUrl,
     });
   },
 );
