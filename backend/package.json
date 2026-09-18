@@ -4,7 +4,8 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "dev": "tsx watch src/server.ts"
+    "dev": "tsx watch src/server.ts",
+    "migrate": "node-pg-migrate"
   },
   "author": "",
   "license": "ISC",
@@ -14,9 +15,12 @@
     "dotenv": "^17.4.2",
     "express": "^5.2.1",
     "helmet": "^8.3.0",
+    "nanoid": "^6.0.1",
+    "node-pg-migrate": "^9.0.0",
     "pg": "^8.23.0",
     "tsx": "^4.23.13",
-    "typecript": "^0.0.1-security"
+    "typecript": "^0.0.1-security",
+    "zod": "^4.6.5"
   },
   "devDependencies": {
     "@types/cors": "^2.8.19",
