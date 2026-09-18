@@ -1,5 +1,8 @@
-import { nanoid } from "nanoid";
+import { customAlphabet } from "nanoid";
 
-export const shortCodeGenerator = () => {
-  return nanoid(6);
-};
+const generateShortCode = customAlphabet(
+  "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ",
+  6,
+);
+
+export const shortCodeGenerator = generateShortCode;
