@@ -18,6 +18,8 @@
     "nanoid": "^6.0.1",
     "node-pg-migrate": "^9.0.0",
     "pg": "^8.23.0",
+    "pino": "^10.3.1",
+    "pino-http": "^11.0.0",
     "tsx": "^4.23.13",
     "typecript": "^0.0.1-security",
     "zod": "^4.6.5"
@@ -26,6 +28,7 @@
     "@types/cors": "^2.8.19",
     "@types/express": "^5.0.6",
     "@types/node": "^22.20.3",
-    "@types/pg": "^8.23.1"
+    "@types/pg": "^8.23.1",
+    "pino-pretty": "^13.1.3"
   }
 }
