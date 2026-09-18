@@ -22,5 +22,5 @@ export const getOriginalUrl = async (shortCode: string) => {
     [shortCode],
   );
 
-  return result.rows[0];
+  return result.rows[0] ?? null;
 };
