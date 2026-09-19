@@ -1,5 +1,4 @@
 import express from "express";
-import { pinoHttp } from 'pino-http';
 import { logger } from "./config/logger.js";
 import cors from "cors";
 import helmet from "helmet";
@@ -14,7 +13,6 @@ const createApp = function () {
   app.use(helmet());
   app.use(express.json());
   app.use(express.urlencoded({ extended: true }));
-  app.use(pinoHttp({ logger }));
 
   app.use("/api", appRouter);
 
